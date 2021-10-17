@@ -1,7 +1,7 @@
-package abushakir.util;
+package com.github.besufikad17.abushakir.util;
 
 import java.util.HashMap;
-import static abushakir.util.Util.*;
+import static com.github.besufikad17.abushakir.util.Util.*;
 public class Constants {
 
     public static String[] evangelists = {"ዮሐንስ", "ማቴዎስ", "ማርቆስ", "ሉቃስ"};

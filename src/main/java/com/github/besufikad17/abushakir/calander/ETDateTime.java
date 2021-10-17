@@ -1,19 +1,18 @@
-package abushakir.calander;
+package com.github.besufikad17.abushakir.calander;
 
 
-//import javafx.util.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static abushakir.util.Constants.*;
-import static abushakir.util.Util.*;
-import com.github.cliftonlabs.json_simple.JsonObject;
-import abushakir.util.Constants;
-import abushakir.util.Util;
+import static com.github.besufikad17.abushakir.util.Constants.*;
+import static com.github.besufikad17.abushakir.util.Util.*;
 
-public class etDateTime {
+import com.github.besufikad17.abushakir.util.Util;
+import com.google.gson.Gson;
+
+public class ETDateTime {
 
     /**
      * etDateTime can represent time values that are at a distance of at most
@@ -105,7 +104,7 @@ public class etDateTime {
     private int second;
     private int millisecond;
 
-    public etDateTime(int year,int month,int day,int hour,int minute,int second,int millisecond) {
+    public ETDateTime(int year, int month, int day, int hour, int minute, int second, int millisecond) {
         this.year = year;
         this.month = month;
         this.day = day;
@@ -119,7 +118,7 @@ public class etDateTime {
         this.moment = _dateToEpoch(year,month,day,hour,minute,second,millisecond);
     }
 
-    public etDateTime(int year, int month, int day) {
+    public ETDateTime(int year, int month, int day) {
         this.year = year;
         this.month = month;
         this.day = day;
@@ -127,7 +126,7 @@ public class etDateTime {
         this.dayGeez = dayNumbers[this.day - 1];
         this.fixed = fixedFromEthiopic(year,month,day);
     }
-    public etDateTime(int year,int month){
+    public ETDateTime(int year, int month){
         this.year = year;
         this.month = month;
         this.day = 1;
@@ -136,7 +135,7 @@ public class etDateTime {
         this.fixed = fixedFromEthiopic(year,month,1);
     }
 
-    public etDateTime(int year){
+    public ETDateTime(int year){
         this.year = year;
         this.month = 1;
         this.day = 1;
@@ -146,7 +145,7 @@ public class etDateTime {
         this.moment = _dateToEpoch(year,1,1,0,0,0,0);
     }
 
-    public etDateTime() {
+    public ETDateTime() {
        this.year = Integer.parseInt(LocalDateTime.now().toString().substring(0,4));
        this.month = 1;
        this.day = 1;
@@ -194,9 +193,9 @@ public class etDateTime {
 
     /* Constructs etDateTime instance using current time and date*/
 
-    public etDateTime now(){
+    public ETDateTime now(){
        String now =  LocalDateTime.now().toString();
-       etDateTime today =  Parse(now);
+       ETDateTime today =  Parse(now);
        int myYear = today.getYear();
        int myMonth = today.getMonth();
        int myDay = today.getDay();
@@ -206,7 +205,7 @@ public class etDateTime {
        int myMillisecond = today.getMillisecond();
        Util util = new Util();
        int[] res = util.gregorianToEthiopic(myYear,myMonth,myDay);
-       return new etDateTime(res[0],res[1],res[2],myHour,myMinute,mySecond,myMillisecond);
+       return new ETDateTime(res[0],res[1],res[2],myHour,myMinute,mySecond,myMillisecond);
     }
 
     /* Returns HashMap in the form of {h : hour,m : minute,s : second } */
@@ -238,7 +237,7 @@ public class etDateTime {
         Example.Example : "2012-02-27 13:27:00" to new etDateTime(year : 2012,month : 2,day : 27,hour : 13,minute : 27,second : 0)
     */
 
-    public static etDateTime Parse(String s){
+    public static ETDateTime Parse(String s){
         List<Integer> date = new ArrayList<>();
         if (s.length() > 19){
             if (s.charAt(19) == '-'){
@@ -256,9 +255,9 @@ public class etDateTime {
 
         }
         if (date.size() == 6){
-            return new etDateTime(date.get(0),date.get(1),date.get(2),date.get(3),date.get(4),date.get(5),0);
+            return new ETDateTime(date.get(0),date.get(1),date.get(2),date.get(3),date.get(4),date.get(5),0);
         }else{
-            return new etDateTime(date.get(0),date.get(1),date.get(2),date.get(3),date.get(4),date.get(5),date.get(6));
+            return new ETDateTime(date.get(0),date.get(1),date.get(2),date.get(3),date.get(4),date.get(5),date.get(6));
         }
     }
 
@@ -399,13 +398,18 @@ public class etDateTime {
 
     /* Creates JsonObject from String HashMap which contains etDateTime variables as values  */
 
-    public JsonObject to_Json(){
-        String[] values = {_fourDigits(year),_twoDigits(month),_twoDigits(day),_twoDigits(hour),
-        _twoDigits(minute),_twoDigits(second),_threeDigits(millisecond)};
-        HashMap<String,String> data = getToJson(values);
-        JsonObject json = new JsonObject();
-        json.putAll(data);
-        return json;
+    public String toJson(){
+        String[] values = {
+                _fourDigits(year),
+                _twoDigits(month),
+                _twoDigits(day),
+                _twoDigits(hour),
+                _twoDigits(minute),
+                _twoDigits(second),
+                _threeDigits(millisecond)
+        };
+        Gson gson = new Gson();
+        return gson.toJson(values);
     }
 
     /* Returns ISO-8601 formatted string in the form of "yyyy-MM-ddThh-mm-ss" */
@@ -423,19 +427,19 @@ public class etDateTime {
 
     /* Returns true if current instance occurs before the other instance */
 
-    public boolean isBefore(etDateTime other){
+    public boolean isBefore(ETDateTime other){
         return fixed < other.fixed && moment < other.moment;
     }
 
     /* Returns true if current instance occurs after the other instance */
 
-    public boolean isAfter(etDateTime other){
+    public boolean isAfter(ETDateTime other){
         return fixed > other.fixed && moment > other.moment;
     }
 
     /* Returns true if current instance occurs at the same time as the other instance */
 
-    public boolean isAtSameMomentAs(etDateTime other){
+    public boolean isAtSameMomentAs(ETDateTime other){
         return fixed == other.fixed && moment == other.moment;
     }
 
@@ -444,7 +448,7 @@ public class etDateTime {
                0 if current instance occurs at the same time as the other instance.
      */
 
-    public int compareTo(etDateTime other) {
+    public int compareTo(ETDateTime other) {
         if (this.isBefore(other))
             return -1;
         else if (this.isAtSameMomentAs(other))
@@ -454,7 +458,7 @@ public class etDateTime {
     }
 
 
-    public etDateTime fromMillisecondsSinceEpoch(long millisecondsSinceEpoch){
+    public ETDateTime fromMillisecondsSinceEpoch(long millisecondsSinceEpoch){
          moment = millisecondsSinceEpoch;
          fixed = fixedFromUnix(moment);
         return withValue(fixed,moment);
@@ -462,7 +466,7 @@ public class etDateTime {
 
     /* Creates instance of etDateTime from given fixed and moment */
 
-    public etDateTime withValue(int fixed,double moment){
+    public ETDateTime withValue(int fixed, double moment){
         int year = (4 * (fixed - ethiopicEpoch) + 1463) / 1461;
         int month = (((fixed - fixedFromEthiopic(year, 1, 1)) / 30) + 1);
         int day = fixed + 1 - fixedFromEthiopic(year, month, 1);
@@ -470,7 +474,7 @@ public class etDateTime {
         int minute = (int)(moment / minMilliSec) % 60;
         int second = (int)(moment / secMilliSec) % 60;
         int millisecond = (int) ((double)moment % 1000);
-        return new etDateTime(year,month,day,hour,minute,second,millisecond);
+        return new ETDateTime(year,month,day,hour,minute,second,millisecond);
     }
 
     /* Returns a new etDateTime instance with duration added to current instance. */

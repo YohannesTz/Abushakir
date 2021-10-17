@@ -1,6 +1,6 @@
-package abushakir.util;
+package com.github.besufikad17.abushakir.util;
 
-public class Calander_Exceptions extends Exception {
+public class CalendarExceptions extends Exception {
     public static class BealNameException extends Exception {
         public BealNameException(String s) {
             super(s);

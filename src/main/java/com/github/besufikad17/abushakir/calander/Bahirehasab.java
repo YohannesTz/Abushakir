@@ -1,16 +1,15 @@
-package abushakir.calander;
+package com.github.besufikad17.abushakir.calander;
+
+import com.github.besufikad17.abushakir.util.CalendarExceptions.BealNameException;
+import com.github.besufikad17.abushakir.util.Constants;
+import com.github.besufikad17.abushakir.util.Util;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Map.Entry;
-import abushakir.util.Constants;
-import abushakir.util.Util;
-import abushakir.util.Calander_Exceptions.BealNameException;
 
-import static abushakir.util.Constants.*;
-import static abushakir.util.Util.*;
+import static com.github.besufikad17.abushakir.util.Constants.*;
+import static com.github.besufikad17.abushakir.util.Util.*;
 
 public class Bahirehasab {
     private int year;
@@ -31,7 +30,7 @@ public class Bahirehasab {
 
     public Bahirehasab() {
         String now = LocalDateTime.now().toString();
-        int fixed = etDateTime.fixedFromEthiopic(Integer.parseInt(now.substring(0, 4)),
+        int fixed = ETDateTime.fixedFromEthiopic(Integer.parseInt(now.substring(0, 4)),
                 Integer.parseInt(now.substring(5, 7)), Integer.parseInt(now.substring(8, 10)));
         this.year = (4 * (fixed - 2796) + 1463) / 1461;
         this.ameteAlem = 5500 + this.year;
@@ -51,12 +50,12 @@ public class Bahirehasab {
         return returnName ? Constants.evangelists[index] : index + "";
     }
 
-    public String getMeskerem1(boolean returnName) {
+    public String getMeskerem(boolean returnName) {
         int result = (this.year + ameteFida + this.rabeet) % 7;
-        return returnName ? Constants.weekdays[result] : result + "";
+        return returnName ? weekdays[result] : result + "";
     }
 
-    public String getMeskerem1() {
+    public String getMeskerem() {
         int result = (ameteFida + this.year + this.rabeet) % 7;
         return result + "";
     }
@@ -76,11 +75,11 @@ public class Bahirehasab {
     /* Returns the date Tsome newewe will be at. */
 
     public HashMap<String,String> getNewewe(){
-        String meskerem1 = getMeskerem1(true);
+        String meskerem1 = getMeskerem(true);
         int month = getYebealMitkehWer();
         int date;
         int dayTewsak = 0;
-        for (Map.Entry mapElement : yeeletTewsak.entrySet()) {
+        for (Entry mapElement : yeeletTewsak.entrySet()) {
             if ((mapElement.getKey()) == weekdays[(indexOf(meskerem1, weekdays) + metkih - 1) % 7]) {
                 dayTewsak = (int) mapElement.getValue();
             }
@@ -90,8 +89,8 @@ public class Bahirehasab {
             monthName = "የካቲት";
             String tikimt1 = weekdays[(indexOf(meskerem1, weekdays) + 2) % 7];
             String metkihElet = weekdays[(indexOf(tikimt1, weekdays) + metkih - 1) % 7];
-            for (Map.Entry mapElement : yeeletTewsak.entrySet()){
-                if ((mapElement.getKey()) == weekdays[(Util.indexOf(metkihElet,weekdays) + metkih - 1)% 7]){
+            for (Entry mapElement : yeeletTewsak.entrySet()){
+                if ((mapElement.getKey()) == weekdays[(indexOf(metkihElet,weekdays) + metkih - 1)% 7]){
                     dayTewsak = (int) mapElement.getValue();
                 }
             }
@@ -108,9 +107,9 @@ public class Bahirehasab {
     public HashMap<String,Object> getAllAtswamat(String beal,int numOfDays){
         HashMap<String,Object> a = new HashMap<>();
         HashMap<String,String> mebajaHamer = getNewewe();
-        for (Map.Entry mapElement : yebealTewsak.entrySet()){
+        for (Entry mapElement : yebealTewsak.entrySet()){
             HashMap<String,String> h2 = new HashMap<>();
-            h2.put("month",months[Util.indexOf(mebajaHamer.get("month"),months) + (Integer.parseInt(mebajaHamer.get("date")) + numOfDays) / 30]);
+            h2.put("month",months[indexOf(mebajaHamer.get("month"),months) + (Integer.parseInt(mebajaHamer.get("date")) + numOfDays) / 30]);
             Object[] values = {beal,h2};
             h2.put("date","" + ((Integer.parseInt(mebajaHamer.get("date")) + numOfDays)%30 == 0 ? 30 : (Integer.parseInt(mebajaHamer.get("date")) + numOfDays)%30));
             a = getAllAtswamatwDate(values);
@@ -139,7 +138,7 @@ public class Bahirehasab {
             HashMap<String, String> mebajaHamer = getNewewe();
             int target = yebealTewsak.get(name);
             String[] vals = {
-                    months[Util.indexOf(mebajaHamer.get("month"), months) + ((Integer.parseInt(mebajaHamer.get("date")) + target) / 30)],
+                    months[indexOf(mebajaHamer.get("month"), months) + ((Integer.parseInt(mebajaHamer.get("date")) + target) / 30)],
                     "" + ((Integer.parseInt(mebajaHamer.get("date")) + target) % 30)
             };
             values = vals;

@@ -1,6 +1,5 @@
-package abushakir.util;
+package com.github.besufikad17.abushakir.util;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Util {

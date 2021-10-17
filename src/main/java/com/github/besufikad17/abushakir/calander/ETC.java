@@ -1,14 +1,12 @@
-package abushakir.calander;
+package com.github.besufikad17.abushakir.calander;
 
-import abushakir.util.Calander_Exceptions.*;
-import abushakir.util.Constants;
+import com.github.besufikad17.abushakir.util.CalendarExceptions.MonthNumberException;
+import com.github.besufikad17.abushakir.util.Constants;
 
 import java.time.LocalDateTime;
 
-import static abushakir.calander.etDateTime.fixedFromEthiopic;
-import static abushakir.util.Constants.dayNumbers;
-import static abushakir.util.Constants.ethiopicEpoch;
-
+import static com.github.besufikad17.abushakir.calander.ETDateTime.fixedFromEthiopic;
+import static com.github.besufikad17.abushakir.util.Constants.ethiopicEpoch;
 
 public class ETC {
 
@@ -66,13 +64,13 @@ public class ETC {
     private int year;
     private int month;
     private int day;
-    private etDateTime date;
+    private ETDateTime date;
 
     public ETC(int year, int month, int day) {
         this.year = year;
         this.month = month;
         this.day = day;
-        this.date = new etDateTime(year,month,day);
+        this.date = new ETDateTime(year,month,day);
     }
 
 
@@ -161,7 +159,7 @@ public class ETC {
         return (firstDay + ((month - 1) * 2)) % 7;
     }
 
-    /* Returns if the year of the current etDateTime instance is leap or not*/
+    /* Returns if the year of the current ETDateTime instance is leap or not*/
 
     public boolean isLeap(){
         if (year % 4 ==3){
@@ -225,7 +223,7 @@ public class ETC {
 
     public Object[] _monthDays(boolean geezDay, boolean weekDayName) throws MonthNumberException{
         Object[] result = new Object[4];
-        etDateTime yr = new etDateTime(this.year,this.month);
+        ETDateTime yr = new ETDateTime(this.year,this.month);
         int monthBeginning = yr.getWeekday();
         int daysInMonth = yr.getMonth() == 13 ? yr.isLeap ? 6 : 5 : 30;
         for (int i = 0; i < daysInMonth; i++) {
@@ -249,7 +247,7 @@ public class ETC {
         boolean geezDay = false;
         boolean weekDayName = false;
         Object[] result = new Object[4];
-        etDateTime yr = new etDateTime(this.year,this.month);
+        ETDateTime yr = new ETDateTime(this.year,this.month);
         int monthBeginning = yr.getWeekday();
         int daysInMonth = yr.getMonth() == 13 ? yr.isLeap ? 6 : 5 : 30;
         for (int i = 0; i < daysInMonth; i++) {

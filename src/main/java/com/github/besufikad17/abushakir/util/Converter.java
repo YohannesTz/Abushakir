@@ -1,8 +1,9 @@
-package abushakir.util;
+package com.github.besufikad17.abushakir.util;
 
 import java.util.ArrayList;
+import com.github.besufikad17.abushakir.util.CalendarExceptions.*;
 
-import static abushakir.util.Constants.geezNumbers;
+import static com.github.besufikad17.abushakir.util.Constants.geezNumbers;
 
 public class Converter {
     public ArrayList<Integer> divide(int denominator, int numinator){
@@ -12,16 +13,16 @@ public class Converter {
         return result;
     }
 
-    public String convert_1_10_ToGeez(int num) throws Calander_Exceptions.EthiopicNumberException {
+    public String convert_1_10_ToGeez(int num) throws EthiopicNumberException {
         if(num < 1){
-            throw new Calander_Exceptions.EthiopicNumberException("Zero (0) and Negative numbers doesn't exsit in" +
+            throw new EthiopicNumberException("Zero (0) and Negative numbers doesn't exsit in" +
                     " Ethiopic numerals");
         }else{
             return geezNumbers.get(num);
         }
     }
 
-    public String convert_11_100_ToGeez(int num) throws Calander_Exceptions.EthiopicNumberException {
+    public String convert_11_100_ToGeez(int num) throws EthiopicNumberException {
         String number = "";
         if(num == 100){
             return geezNumbers.get(num);
@@ -36,7 +37,7 @@ public class Converter {
         return number;
     }
 
-    public String convert_111_1000_ToGeez(int num) throws Calander_Exceptions.EthiopicNumberException {
+    public String convert_111_1000_ToGeez(int num) throws EthiopicNumberException {
         ArrayList<Integer> result = divide(100,num);
         String number = "";
         if (result.get(1) == 0){
@@ -49,10 +50,10 @@ public class Converter {
         return right + left;
     }
 
-    public String convertToGeez(int num) throws Calander_Exceptions.EthiopicNumberException {
+    public String convertToGeez(int num) throws EthiopicNumberException {
         String geezNumber = "";
         if (num < 1){
-            throw new Calander_Exceptions.EthiopicNumberException("Zero (0) and Negative numbers doesn't exsit in" +
+            throw new EthiopicNumberException("Zero (0) and Negative numbers doesn't exsit in" +
                     " Ethiopic numerals");
         }else if (num > 1 && num < 10){
             geezNumber = convert_1_10_ToGeez(num);
