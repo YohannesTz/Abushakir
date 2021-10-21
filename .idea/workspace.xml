@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6fb2e2a9-d68c-41bd-b298-5016e1635908" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="ProjectId" id="1zJ42Y9E6S5fFaddCqFEvwBcsbV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
+    <property name="not.eligible.for.single.variant.sync" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6fb2e2a9-d68c-41bd-b298-5016e1635908" name="Default Changelist" comment="" />
+      <created>1633852649703</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633852649703</updated>
+    </task>
+    <task id="LOCAL-00001" summary="migrated to gradle and refactored code">
+      <created>1634509318150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634509318150</updated>
+    </task>
+    <task id="LOCAL-00002" summary="migrated to gradle and refactored code">
+      <created>1634510082072</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634510082072</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added documentation site">
+      <created>1634510777833</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634510777833</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="migrated to gradle and refactored code" />
+    <MESSAGE value="added documentation site" />
+    <option name="LAST_COMMIT_MESSAGE" value="added documentation site" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="141" y="35" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1634479053308">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="141" y="35" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.701@0.27.1366.701" timestamp="1634479053308" />
+    <state x="522" y="269" width="312" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1634471022891">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="522" y="269" width="312" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1366.701@0.27.1366.701" timestamp="1634471022891" />
+    <state x="0" y="27" width="1356" height="701" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1634479875099">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="0" y="27" width="1356" height="701" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.701@0.27.1366.701" timestamp="1634479875099" />
+    <state x="114" y="27" width="1128" height="701" key="CommitChangelistDialog2" timestamp="1634510777569">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="114" y="27" width="1128" height="701" key="CommitChangelistDialog2/0.27.1366.701@0.27.1366.701" timestamp="1634510777569" />
+    <state x="460" y="139" width="424" height="491" key="FileChooserDialogImpl" timestamp="1634847044587">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="460" y="139" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.701@0.27.1366.701" timestamp="1634847044587" />
+    <state x="0" y="176" width="1356" height="416" key="FileDocumentManager.FileCacheConflict" timestamp="1634508473362">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="0" y="176" width="1356" height="416" key="FileDocumentManager.FileCacheConflict/0.27.1366.701@0.27.1366.701" timestamp="1634508473362" />
+    <state x="247" y="75" width="861" height="612" key="NewModule_or_Project.wizard" timestamp="1634478217382">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="247" y="75" width="861" height="612" key="NewModule_or_Project.wizard/0.27.1366.701@0.27.1366.701" timestamp="1634478217382" />
+    <state x="164" y="27" width="1027" height="701" key="SettingsEditor" timestamp="1634510365979">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="164" y="27" width="1027" height="701" key="SettingsEditor/0.27.1366.701@0.27.1366.701" timestamp="1634510365979" />
+    <state x="278" y="113" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1634510148766">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="278" y="113" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.701@0.27.1366.701" timestamp="1634510148766" />
+    <state x="331" y="205" key="com.intellij.ide.util.TipDialog" timestamp="1634845587088">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="331" y="205" key="com.intellij.ide.util.TipDialog/0.27.1366.701@0.27.1366.701" timestamp="1634845587088" />
+    <state x="442" y="297" width="471" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634846504944">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="442" y="297" width="471" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.701@0.27.1366.701" timestamp="1634846504944" />
+    <state x="333" y="169" width="689" height="424" key="git4idea.merge.GitPullDialog" timestamp="1634846810694">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="333" y="169" width="689" height="424" key="git4idea.merge.GitPullDialog/0.27.1366.701@0.27.1366.701" timestamp="1634846810694" />
+    <state x="0" y="27" width="1356" height="701" key="new project wizard" timestamp="1634480859419">
+      <screen x="0" y="27" width="1366" height="701" />
+    </state>
+    <state x="0" y="27" width="1356" height="701" key="new project wizard/0.27.1366.701@0.27.1366.701" timestamp="1634480859419" />
+  </component>
+</project>
